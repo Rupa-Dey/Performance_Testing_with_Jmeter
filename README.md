@@ -1,35 +1,35 @@
-🚀 **Performance Testing**
-📌 **Objective**
+## 🚀 **Performance Testing**
+## 📌 **Objective**
 To evaluate the performance of the Restful Booker API using Apache JMeter under different load conditions, focusing on metrics such as response time, error rate, and system behavior under concurrent users.
 
-🧪 **Tools & Frameworks**
-**Apache JMeter** – Performance testing tool
+## 🧪 **Tools & Frameworks**
+-**Apache JMeter** – Performance testing tool
 
-**CSV Data Set Config** – For dynamic input of API endpoints/auth credentials
+-**CSV Data Set Config** – For dynamic input of API endpoints/auth credentials
 
-**Restful Booker API** – https://restful-booker.herokuapp.com/apidoc/index.html
+-**Restful Booker API** – https://restful-booker.herokuapp.com/apidoc/index.html
 
-**HTML Report** – For visualizing test results
+-**HTML Report** – For visualizing test results
 
-🧾 **Test Plan Overview**
-*Authentication*: Handled via a CSV file (username.csv) containing valid tokens or credentials
+## 🧾 **Test Plan Overview**
+-**Authentication**: Handled via a CSV file (username.csv) containing valid tokens or credentials
 
-*API Coverage*: Includes endpoints like GET /booking, POST /booking, PUT /booking/{id}, DELETE /booking/{id}
+-**API Coverage**: Includes endpoints like GET /booking, POST /booking, PUT /booking/{id}, DELETE /booking/{id}
 
-*Concurrency*: Tests are executed with varying numbers of concurrent users (e.g., 100, 500, 800, 1000, 1200)
+-**Concurrency**: Tests are executed with varying numbers of concurrent users (e.g., 100, 500, 800, 1000, 1200)
 
-*Assertions*: To validate expected response codes and error messages
+-**Assertions**: To validate expected response codes and error messages
 
-📁 **JMeter test plan file**: /performance/Performance_Testing_Project.jmx
-📁 **API list & auth file**: /performance/username.csv
+## 📁 **JMeter test plan file**: /performance/Performance_Testing_Project.jmx
+## 📁 **API list & auth file**: /performance/username.csv
 
-▶️ How to Run the Test
+## ▶️ How to Run the Test
 bash
 Copy
 Edit
 # jtl file-making command
 jmeter -n -t filename.jmx -l report\filename.jtl
-Ensure JMeter is installed and the environment is correctly configured. JMeter Download
+## Ensure JMeter is installed and the environment is correctly configured. JMeter Download
 bash
 Copy
 Edit
@@ -52,14 +52,14 @@ Concurrent Users:	Number of simultaneous users simulated
 | 1000  | 0.05       | 400.3/sec     | 6000                    |
 
 
-##📂 Reports
+## 📂 Reports
 After execution, JMeter generates a detailed HTML report, including graphs and metrics:
 
-##📁 Output directory: /performance/reports/
+## 📁 Output directory: /performance/reports/
 
 Open index.html in any browser to view the report summary.
 
-##🧠 Observations
+## 🧠 Observations
 The API performs optimally under up to 800 users.
 
 Slight increase in error rate and latency beyond 1000 concurrent users.
