@@ -20,17 +20,20 @@ To evaluate the performance of the Restful Booker API using Apache JMeter under 
 
 -**Assertions**: To validate expected response codes and error messages
 
-## 📁 **JMeter test plan file**: /performance/Performance_Testing_Project.jmx
-## 📁 **API list & auth file**: /performance/username.csv
+## 📁 **JMeter test plan file**: 
+/performance/Performance_Testing_Project.jmx
+
+## 📁 **API list & auth file**:
+/performance/username.csv
 
 ## ▶️ How to Run the Test
 # jtl file-making command
 ```console
-jmeter -n -t filename.jmx -l report\filename.jtl
+jmeter -n -t Performance_Testing_Project.jmx -l report\Performance_Testing_Project.jtl
 ```
 # html file generate command
 ```console
-jmeter -g report\filename.jtl -o report\filename.html
+jmeter -g report\Performance_Testing_Project.jtl -o report\Performance_Testing_Project.html
 ```
 ## 📈 **Metrics Collected**
 -**Average Response Time**:	Mean time taken for API responses.
