@@ -1,4 +1,4 @@
-# 🚀 **Performance Testing**
+### 🚀 **Performance Testing**
 ## 📌 **Objective**
 To evaluate the performance of the Restful Booker API using Apache JMeter under different load conditions, focusing on metrics such as response time, error rate, and system behavior under concurrent users.
 
@@ -24,18 +24,19 @@ To evaluate the performance of the Restful Booker API using Apache JMeter under 
 ## 📁 **API list & auth file**: /performance/username.csv
 
 ## ▶️ How to Run the Test
-bash
-Copy
-Edit
 # jtl file-making command
-jmeter -n -t filename.jmx -l report\filename.jtl
-## Ensure JMeter is installed and the environment is correctly configured. JMeter Download
-bash
+```console
 Copy
 Edit
-# html file generate command
-jmeter -g report\filename.jtl -o report\filename.html
+jmeter -n -t filename.jmx -l report\filename.jtl
+```
 
+# html file generate command
+```console
+Copy
+Edit
+jmeter -g report\filename.jtl -o report\filename.html
+```
 📈 **Metrics Collected**
 Average Response Time:	Mean time taken for API responses
 Max Response Time:	Highest observed response time
