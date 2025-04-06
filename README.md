@@ -33,11 +33,16 @@ jmeter -n -t filename.jmx -l report\filename.jtl
 jmeter -g report\filename.jtl -o report\filename.html
 ```
 ## 📈 **Metrics Collected**
--**Average Response Time**:	Mean time taken for API responses
--**Max Response Time**:	Highest observed response time
--**Requests per Second**:	Throughput under load
--**Error Rate**:	Percentage of failed API calls
--**Concurrent Users**:	Number of simultaneous users simulated
+-**Average Response Time**:	Mean time taken for API responses.
+
+-**Max Response Time**:	Highest observed response time.
+
+-**Requests per Second**:	Throughput under load.
+
+-**Error Rate**:	Percentage of failed API calls.
+
+-**Concurrent Users**:	Number of simultaneous users simulated.
+
 ## 📊 Sample Result Summary
 
 | Users | Errors (%) | Avg TPS       | Total Concurrent Users |
