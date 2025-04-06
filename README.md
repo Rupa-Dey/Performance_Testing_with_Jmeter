@@ -1,102 +1,69 @@
-📄 RESTBooker API Test Documentation
-🧪 Test Summary
-API Name: RESTBooker
+🚀 Performance Testing
+📌 Objective
+To evaluate the performance of the Restful Booker API using Apache JMeter under different load conditions, focusing on metrics such as response time, error rate, and system behavior under concurrent users.
 
-Tool Used: Apache JMeter
+🧪 Tools & Frameworks
+Apache JMeter – Performance testing tool
 
-Test Plan Source: restbooker_test_plan.jmx
+CSV Data Set Config – For dynamic input of API endpoints/auth credentials
 
-Report Format: HTML (auto-generated from JMeter run)
+Restful Booker API – Target system under test
 
-Test Date: 14th march 2025
+HTML Report – For visualizing test results
 
-Tester: Rupa Dey
+🧾 Test Plan Overview
+Authentication: Handled via a CSV file (username.csv) containing valid tokens or credentials
 
-🔧 Test Configuration
-Thread Groups:
+API Coverage: Includes endpoints like GET /booking, POST /booking, PUT /booking/{id}, DELETE /booking/{id}
 
-Total Threads (Users): 100
+Concurrency: Tests are executed with varying numbers of concurrent users (e.g., 100, 500, 800, 1000, 1200)
 
-Ramp-up Period: 3010 seconds
+Assertions: To validate expected response codes and error messages
 
-Loop Count: 1 
+📁 JMeter test plan file: /performance/Performance_Testing_Project.jmx
+📁 API list & auth file: /performance/username.csv
 
-Base URL:https://restful-booker.herokuapp.com/apidoc/index.html#
-
-🧵 Test Scenarios
-Create Booking
-
-Method: POST
-
+▶️ How to Run the Test
+bash
+Copy
 Edit
-{
-  {
-    "firstname" : "Dola",
-    "lastname" : "Dey",
-    "totalprice" : 12202,
-    "depositpaid" : true,
-    "bookingdates" : {
-        "checkin" : "2024-01-01",
-        "checkout" : "2026-01-01"
-    },
-    "additionalneeds" : "Biriyani"
-}
-Expected Status Code: 200 / 201
+# jtl file making command
+jmeter -n -t filename.jmx -l report\filename.jtl
+Ensure JMeter is installed and the environment is correctly configured. JMeter Download
+bash
+Copy
+Edit
+#html file generate command
+jmeter -g report\filename.jtl -o report\filename.html
 
-Get Booking
-
-Method: GET
-
-Endpoint: /booking/{id}
-
-Expected Status Code: 200
-
-Update Booking
-
-Method: PUT
-
-Authorization: Basic Auth (admin credentials)
-
-Expected Status Code: 200
-
-Delete Booking
-
-Method: DELETE
-
-Authorization: Basic Auth
-
-Expected Status Code: 201
-
-📈 Performance Metrics (From HTML Report)
-Average Response Time: 230 ms
-
-Max Response Time: 950 ms
-
-Min Response Time: 120 ms
-
-Throughput: 15 requests/sec
-
-Error Rate: 0.00%
-
-📋 Assertions
-Response Code: Must be 200 / 201 for success
-
-Response Time: Should be under 1s
-
-Response Body: Must contain booking ID and other expected fields
-
-🧼 Cleanup
-Delete any bookings created during the test via DELETE /booking/{id}
-
-📎 Attachments
-HTML Report: performance_Testing_project.html
-
-Test Plan File: Performance_Testing_Project.jmx
+📈 Metrics Collected
+Metric	Description
+Average Response Time	Mean time taken for API responses
+Max Response Time	Highest observed response time
+Requests per Second	Throughput under load
+Error Rate	Percentage of failed API calls
+Concurrent Users	Number of simultaneous users simulated
+📊 Sample Result Summary
+Users	Errors (%)	Avg TPS		Total concurrent users
+100	0.00	44.3/sec	        600              
+500	0.00	197.5/sec	        3000
+800	0.00	319.9/sec          4800
+1000	0.05	400.3/sec 	         6000
 
 
+📂 Reports
+After execution, JMeter generates a detailed HTML report including graphs and metrics:
 
+📁 Output directory: /performance/reports/
 
+Open index.html in any browser to view the report summary.
 
+🧠 Observations
+The API performs optimally under up to 800 users.
 
+Slight increase in error rate and latency beyond 1000 concurrent users.
 
+Authentication flow remains stable across all test loads.
 
+📌 **Contributor**: Rupa Dey  
+📅 **Last Updated**: 4th April, 2025
